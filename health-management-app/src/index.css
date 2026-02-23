@@ -1,0 +1,299 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brutal-bg text-stone-100 font-sans;
+  }
+}
+
+@layer components {
+  .brutal-border {
+    border: 3px solid;
+    @apply border-brutal-border shadow-[6px_6px_0_#44403c];
+  }
+
+  .brutal-button {
+    border: 3px solid;
+    @apply border-brutal-border bg-brutal-bg text-brutal-border 
+           px-6 py-3 font-bold uppercase tracking-wide cursor-pointer 
+           transition-all duration-200 font-mono hover:translate-x-[-2px] 
+           hover:translate-y-[-2px] hover:shadow-[6px_6px_0_#ef4444] 
+           active:translate-x-0 active:translate-y-0 active:shadow-[3px_3px_0_#ef4444];
+  }
+
+  .metric-card {
+    border: 3px solid;
+    @apply border-brutal-border bg-brutal-card p-6 relative 
+           transition-all duration-300 hover:translate-x-[-3px] 
+           hover:translate-y-[-3px] hover:shadow-[8px_8px_0_#ef4444];
+  }
+
+  .tab-button {
+    border-bottom: 3px solid transparent;
+    @apply border-none bg-transparent text-stone-500 px-6 py-4 
+           font-semibold uppercase tracking-wide cursor-pointer 
+           transition-all duration-200 font-mono text-sm hover:text-brutal-border;
+  }
+
+  .tab-button.active {
+    border-bottom-color: #ef4444;
+    @apply text-brutal-border;
+  }
+
+  .status-badge {
+    @apply inline-block px-3 py-1 border-2 text-xs font-bold 
+           tracking-wider font-mono uppercase;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-stone-800 border-2 border-stone-700 overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-red-600 to-red-700 
+           transition-all duration-500 ease-out;
+  }
+
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black/80 flex items-center justify-center 
+           z-50 animate-fade-in;
+  }
+
+  .modal-content {
+    border: 3px solid;
+    @apply bg-brutal-card border-brutal-border max-w-lg 
+           w-11/12 max-h-[90vh] overflow-y-auto animate-slide-in;
+  }
+
+  .form-input {
+    @apply w-full bg-brutal-bg border-2 border-stone-700 text-brutal-border 
+           px-4 py-3 font-mono text-sm focus:outline-none focus:border-red-600;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-brutal-card;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-stone-700 border-2 border-brutal-card hover:bg-red-600;
+  }
+}
+
+
+
+
+
+/* Theme System - Add this to your global CSS or index.css */
+
+/* Theme Color Variables */
+:root {
+  /* Orange Theme (Default) */
+  --theme-orange-primary: #f97316;
+  --theme-orange-dark: #ea580c;
+  --theme-orange-light: #fb923c;
+  
+  /* Blue Theme */
+  --theme-blue-primary: #3b82f6;
+  --theme-blue-dark: #2563eb;
+  --theme-blue-light: #60a5fa;
+  
+  /* Green Theme */
+  --theme-green-primary: #22c55e;
+  --theme-green-dark: #16a34a;
+  --theme-green-light: #4ade80;
+  
+  /* Purple Theme */
+  --theme-purple-primary: #a855f7;
+  --theme-purple-dark: #9333ea;
+  --theme-purple-light: #c084fc;
+  
+  /* Red Theme */
+  --theme-red-primary: #ef4444;
+  --theme-red-dark: #dc2626;
+  --theme-red-light: #f87171;
+  
+  /* Pink Theme */
+  --theme-pink-primary: #ec4899;
+  --theme-pink-dark: #db2777;
+  --theme-pink-light: #f472b6;
+  
+  /* Yellow Theme */
+  --theme-yellow-primary: #eab308;
+  --theme-yellow-dark: #ca8a04;
+  --theme-yellow-light: #facc15;
+  
+  /* Cyan Theme */
+  --theme-cyan-primary: #06b6d4;
+  --theme-cyan-dark: #0891b2;
+  --theme-cyan-light: #22d3ee;
+  
+  /* Indigo Theme */
+  --theme-indigo-primary: #6366f1;
+  --theme-indigo-dark: #4f46e5;
+  --theme-indigo-light: #818cf8;
+  
+  /* Teal Theme */
+  --theme-teal-primary: #14b8a6;
+  --theme-teal-dark: #0d9488;
+  --theme-teal-light: #2dd4bf;
+}
+
+/* Dark Mode Backgrounds */
+.bg-stone-950 {
+  background-color: #0c0a09;
+}
+
+.bg-stone-900 {
+  background-color: #1c1917;
+}
+
+.bg-stone-800 {
+  background-color: #292524;
+}
+
+/* Light Mode Backgrounds */
+.bg-stone-100 {
+  background-color: #f5f5f4;
+}
+
+.bg-stone-50 {
+  background-color: #fafaf9;
+}
+
+/* Text Colors */
+.text-stone-100 {
+  color: #f5f5f4;
+}
+
+.text-stone-900 {
+  color: #1c1917;
+}
+
+/* Theme-specific accent colors */
+.theme-orange .accent-bg {
+  background-color: var(--theme-orange-primary) !important;
+}
+
+.theme-blue .accent-bg {
+  background-color: var(--theme-blue-primary) !important;
+}
+
+.theme-green .accent-bg {
+  background-color: var(--theme-green-primary) !important;
+}
+
+.theme-purple .accent-bg {
+  background-color: var(--theme-purple-primary) !important;
+}
+
+.theme-red .accent-bg {
+  background-color: var(--theme-red-primary) !important;
+}
+
+.theme-pink .accent-bg {
+  background-color: var(--theme-pink-primary) !important;
+}
+
+.theme-yellow .accent-bg {
+  background-color: var(--theme-yellow-primary) !important;
+}
+
+.theme-cyan .accent-bg {
+  background-color: var(--theme-cyan-primary) !important;
+}
+
+.theme-indigo .accent-bg {
+  background-color: var(--theme-indigo-primary) !important;
+}
+
+.theme-teal .accent-bg {
+  background-color: var(--theme-teal-primary) !important;
+}
+
+/* Border colors for themes */
+.theme-orange .accent-border {
+  border-color: var(--theme-orange-primary) !important;
+}
+
+.theme-blue .accent-border {
+  border-color: var(--theme-blue-primary) !important;
+}
+
+.theme-green .accent-border {
+  border-color: var(--theme-green-primary) !important;
+}
+
+.theme-purple .accent-border {
+  border-color: var(--theme-purple-primary) !important;
+}
+
+.theme-red .accent-border {
+  border-color: var(--theme-red-primary) !important;
+}
+
+.theme-pink .accent-border {
+  border-color: var(--theme-pink-primary) !important;
+}
+
+.theme-yellow .accent-border {
+  border-color: var(--theme-yellow-primary) !important;
+}
+
+.theme-cyan .accent-border {
+  border-color: var(--theme-cyan-primary) !important;
+}
+
+.theme-indigo .accent-border {
+  border-color: var(--theme-indigo-primary) !important;
+}
+
+.theme-teal .accent-border {
+  border-color: var(--theme-teal-primary) !important;
+}
+
+/* Text colors for themes */
+.theme-orange .accent-text {
+  color: var(--theme-orange-primary) !important;
+}
+
+.theme-blue .accent-text {
+  color: var(--theme-blue-primary) !important;
+}
+
+.theme-green .accent-text {
+  color: var(--theme-green-primary) !important;
+}
+
+.theme-purple .accent-text {
+  color: var(--theme-purple-primary) !important;
+}
+
+.theme-red .accent-text {
+  color: var(--theme-red-primary) !important;
+}
+
+.theme-pink .accent-text {
+  color: var(--theme-pink-primary) !important;
+}
+
+.theme-yellow .accent-text {
+  color: var(--theme-yellow-primary) !important;
+}
+
+.theme-cyan .accent-text {
+  color: var(--theme-cyan-primary) !important;
+}
+
+.theme-indigo .accent-text {
+  color: var(--theme-indigo-primary) !important;
+}
+
+.theme-teal .accent-text {
+  color: var(--theme-teal-primary) !important;
+}
